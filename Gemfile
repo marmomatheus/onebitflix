@@ -34,6 +34,9 @@ gem 'fast_jsonapi', git: "https://github.com/Netflix/fast_jsonapi",
 branch: "dev"
 # Pesquisas dentro do Postgresql
 gem 'pg_search'
+	
+gem "aws-sdk-s3"
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
