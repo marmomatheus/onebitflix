@@ -1,7 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+docker-compose build
+
+docker-compose run --rm app bundle exec yarn install
+
+docker-compose up
+
+bundle exec rails db:create db:migrate
 
 Things you may want to cover:
 

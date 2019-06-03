@@ -1,8 +1,7 @@
 class Movie < ApplicationRecord
   include PgSearch
   include Highlightable
-  multisearchable against: [:title], if: lambda{ |record|
- record.serie.nil ? }
+  multisearchable against: [:title], if: lambda{ |record | record.serie.nil? }
   belongs_to :serie, optional: true
   belongs_to :category, optional: true
   has_many :reviews, as: :reviewable
@@ -15,7 +14,7 @@ class Movie < ApplicationRecord
   validates :video_key, presence: true
   validates :episode_number, presence: true, uniqueness: { scope:
  :serie_id }, if: ->{ serie.present? }
-  validates :category, presence: true, if: ->{ serie.nil ? }
+  validates :category, presence: true, if: ->{ serie.nil? }
   validate :highlight_episode
  
  private
